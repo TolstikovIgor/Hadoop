@@ -49,8 +49,7 @@
 - head -n 100000 vehicles.csv > vehicles2.csv
 - Опция 1:
 Добавить к существующему файлу
-echo "<Text to append>" | hdfs dfs -appendToFile -/user/hduser/myfile.txt echo "<Text to append>"
-| hdfs dfs -appendToFile -/user/hduser/myfile.txt ИЛИ
+echo "<Text to append>" | hdfs dfs -appendToFile -/user/hduser/myfile.txt echo "<Text to append>" | hdfs dfs -appendToFile -/user/hduser/myfile.txt ИЛИ
 hdfs dfs -appendToFile -/user/hduser/myfile.txt а затем введите текст на терминале. Когда вы
 закончите печатать, нажмите "Ctrl + D",
 - Option2:
@@ -71,20 +70,7 @@ hdfs dfs -put -f myfile.txt/user/hduser/myfile.txt
 - Хранит метаданные для таблиц Hive — схему на чтение 6schema-on-read) , расположение, информацию о столбцах в таблице, типы данных, ACL и тд.
 
   14.Чем отличается external table и managed table?
-- Managed tables A managed table is stored under the hive.metastore.warehouse.dir path property, by default in a
-folder path similar to /user/hive/warehouse/databasename.db/tablename/. The default location can
-be overridden by the location property during table creation. If a managed table or partition is
-dropped, the data and metadata associated with that table or partition are deleted. If the PURGE
-option is not specified, the data is moved to a trash folder for a defined duration.
-Use managed tables when Hive should manage the lifecycle of the table, or when generating
-temporary tables.- External tables
-An external table describes the metadata / schema on external files. External table files can be
-accessed and managed by processes outside of Hive. External tables can access data stored in
-sources such as Azure Storage Volumes 6ASV) or remote HDFS locations. If the structure or
-partitioning of an external table is changed, an MSCK REPAIR TABLE table_name statement can
-be used to refresh metadata information.
-Use external tables when files are already present or in remote locations, and the files should remain
-even if the table is dropped.
+- Managed tables A managed table is stored under the hive.metastore.warehouse.dir path property, by default in a folder path similar to /user/hive/warehouse/databasename.db/tablename/. The default location can be overridden by the location property during table creation. If a managed table or partition is dropped, the data and metadata associated with that table or partition are deleted. If the PURGE option is not specified, the data is moved to a trash folder for a defined duration. Use managed tables when Hive should manage the lifecycle of the table, or when generating temporary tables.- External tables An external table describes the metadata / schema on external files. External table files can be accessed and managed by processes outside of Hive. External tables can access data stored in sources such as Azure Storage Volumes 6ASV) or remote HDFS locations. If the structure or partitioning of an external table is changed, an MSCK REPAIR TABLE table_name statement can be used to refresh metadata information. Use external tables when files are already present or in remote locations, and the files should remain even if the table is dropped.
 
   15.*Какие форматы умеет читать Hive?
 - Текстовые файл, Файл последовательности6SequenceFile), Файл столбцов строк6RCFile), ORC файл
