@@ -1,0 +1,58 @@
+
+/cassandra/bin/cassandra
+
+/cassandra/bin/cqlsh 89.208.230.116
+
+
+CREATE  KEYSPACE  student3_10 
+   WITH REPLICATION = { 
+      'class' : 'SimpleStrategy', 'replication_factor' : 1 };
+
+CREATE TABLE animals
+(id int, 
+color text,
+name text,
+size text,
+primary key (id,color,name));
+
+
+insert into animals (id, color, name, size)
+values (3, 'brown', 'Deer', 'Big');
+
+insert into animals (id, color, name, size)
+values (1, 'black', 'Dog', 'Medium');
+
+insert into animals (id, color, name, size)
+values (2, 'white', 'Cat', 'Medium');
+
+select * from animals
+where id = 3 and name = '12321';
+
+
+insert into animals (id, name)
+values (3, 'Doe' );
+
+
+insert into animals (id, name)
+values (5, 'Snake');
+
+delete id from animals where id = 1;
+
+insert into animals (id, name, size)
+values (3, null, null);
+
+insert into animals (id, name, size) values (1, 'Duck', 'Small');
+
+select * from animals where size = 'Big';
+
+
+hbase shell
+create_namespace 'lesson7_2'
+create 'lesson7:animals', 'name', 'size'
+
+put 'lesson7:animals', '3', 'name', 'Deer'
+put 'lesson7:animals', '3', 'size', 'Big'
+put 'lesson7:animals', '5', 'name', 'Snake'
+
+put 'lesson7:animals', '3', 'name', 'Doe'
+delete 'lesson7:animals', '5'
