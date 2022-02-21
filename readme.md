@@ -3,19 +3,19 @@
 ![](logo.png)
 > #### Факультет Data Engineering
 ____
-## Урок 1. Введение в Hadoop
+### Урок 1. Введение в Hadoop
 * Настройка
 * Генерация ключей
 * Кластер
 * Историческая справка
 
-## Урок 2. HDFS
+### Урок 2. HDFS
 * HDFS (Hadoop Distributed File System)
 * Управляющий узел, узел имен или сервер имен (NameNode)
 * Secondary NameNode
 * Узел или сервер данных (DataNode, Node)
 
-## Урок 3. YARN & MR
+### Урок 3. YARN & MR
 * Apache Hadoop YARN
 * ResourceManager (RM)
 * ApplicationMaster (AM)
@@ -27,13 +27,13 @@ ____
 * Capacity-планировщик
 * MapReduce
 
-## Урок 4. Hive & HUE
+### Урок 4. Hive & HUE
 * Apache Hive
 * Возможности
 * HiveQL
 * Hive MetaStore
 
-## Урок 5. Форматы хранения
+### Урок 5. Форматы хранения
 * Строчные форматы
     * CSV
     * JSON (англ. JavaScript Object Notation)
@@ -44,7 +44,7 @@ ____
 * Бинарные форматы
     * Apache Avro
 
-## Урок 6. ETL
+### Урок 6. ETL
 * Виды получения данных
     * ETL
     * ELT
@@ -56,11 +56,11 @@ ____
     * Apache NiFi
     * Apache Kafka
 
-## Урок 7. NoSQL
+### Урок 7. NoSQL
 * Apache Cassandra
 * Apache HВase
 
-## Урок 8. DWH
+### Урок 8. DWH
 * DataLake
 * DWH
 
