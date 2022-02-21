@@ -1,0 +1,43 @@
+Создадим простую таблицу в формате parquet:
+create table lesson5.parquet_test (
+id int,
+str string)
+stored as parquet;
+Вставим значение и проверим таблицу:
+insert into lesson5.parquet_test
+select
+1 as id,
+"myText" as str;
+select * from parquet_test;
+Найдём созданные файлы в hdfs в папке /warehouse/tablespace
+Попробуем изменить метаданные таблицы, и проверим, что сам файл не изменился:
+alter table lesson5.parquet_test change str str_new string;
+alter table lesson5.parquet_test change str_new str string;
+Зададим параметр сжатия и попробуем создать другую таблицу
+SET parquet.compression=SNAPPY;
+Сравниваем таблицы с помощью parquet-tools mets и hdfs dfs -du
+Cоздаем таблицу в формате avro:
+create table lesson5.avro_test (
+id int,
+str string)
+stored as avro;
+insert into lesson5.avro_test
+select
+2 as id,
+"myText" as str;
+Устанавливаем сжатие и создаём ещё одну таблицу:
+SET avro.output.codec=snappy;
+Сравниваем параметры с помощьюу avro-tools
+avro-tools getmeta
+hdfs://manager.novalocal:8020/user/hive/warehouse/lesson5.db/avro_test/000000_0_copy_1
+Создаем таблицу в формате ORC
+create table lesson5_10.orc_test (
+id int,
+str string)
+stored as orc;
+insert into lesson5_10.orc_test
+select
+2 as id,
+"myText" as str;
+Проверяем с помощью команды --orcfiledump:
+hive --orcfiledump /user/hive/warehouse/lesson5_10.db/orc_test/000000_0_copy_1
