@@ -1,0 +1,25 @@
+Практическая часть
+Проверяем наличие файлов в своём домашнем каталоге:
+hdfs dfs -ls
+Копируем файл в HDFS:
+hdfs dfs -put file_name
+Удаляем файл из HDFS:
+hdfs dfs -rm file_name
+Удаляем файл из HDFS без помещения в корзину
+hdfs dfs -rm -skipTrash file_name
+Создаем директорию в HDFS:
+hdfs dfs -mkdir dir_name
+Перемещаем файл в директорию в HDFS:
+hdfs dfs -mv file_name dir_name/.
+Удаляем директорию со всем содержимым:
+hdfs dfs -rm -r dir_name
+Изменяем файл репликации:
+hdfs dfs -setrep -w 5 file_name
+Для копирования файл в локальную директорию:
+hdfs dfs -get file_name
+Для вывода файл на экран используется:
+hdfs dfs -cat file_name:
+Если нужно вывести только начало файла используется:
+hdfs dfs -cat file_name | head
+Для выведения конца файла:
+hdfs dfs -tail file_name
