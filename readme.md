@@ -1,7 +1,7 @@
 # BigData. Введение в экосистему Hadoop
 
 ![](logo.png)
-> #### Факультет Data Engineering
+#### Факультет Data Engineering
 ____
 ### Урок 1. Введение в Hadoop
 * Настройка
