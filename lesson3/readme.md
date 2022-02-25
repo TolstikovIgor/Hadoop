@@ -1,3 +1,6 @@
+## Урок 3. YARN & MR
+#### Домашнее задание
+
 1. Запустить задачу из примеров, например, вычисление pi методом Монте-Карло
 yarn jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-mapreduce-examples.jar pi 32 10000
 зайти на ResourceManager http://manager.novalocal:8088 и найти свою задачу.
