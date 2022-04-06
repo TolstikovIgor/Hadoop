@@ -2,6 +2,9 @@
 
 ![](logo.png)
 #### Факультет Data Engineering
+___
+#### [Финальное задание](https://github.com/TolstikovIgor/Hadoop/tree/main/lesson8)
+Ответить на вопросы
 ____
 #### [Урок 1. Введение в Hadoop](https://github.com/TolstikovIgor/Hadoop/tree/main/lesson1)
 * Настройка
